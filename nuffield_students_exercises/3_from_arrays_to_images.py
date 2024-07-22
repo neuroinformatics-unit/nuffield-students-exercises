@@ -33,7 +33,7 @@ print("Exercise 1.1")
 
 # ~~~~~~~~~~~
 # Exercise 1.2
-# Read the image 'nuffield_students_exercises/data/cat.jpeg' with matplotlib.
+# Read the image 'data/cat.jpeg' with matplotlib.
 # What is its type? What is its shape?
 # Plot the image as done in Exercise 1.1.
 # Hint: Use plt.imread().
@@ -128,3 +128,8 @@ print("Exercise 1.10")
 
 # ..... your code here .....
 
+
+
+# ⚄◉․﹒．~*~․﹒．◉⚄⚄◉․﹒．~*~․﹒．◉⚄⚄◉․﹒．~*~․﹒．◉⚄
+# References:
+# Matplotlib documentation: https://matplotlib.org/stable/contents.html
