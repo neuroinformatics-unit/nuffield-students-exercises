@@ -51,7 +51,28 @@ print("Exercise 1.3")
 treshold = 100
 image = ... 
 channel = ...
-def thresholding(image, treshold, RGB_channel):
+def thresholding(
+        image: np.ndarray,
+        treshold: int,
+        RGB_channel: int
+) -> np.ndarray:
+    """A function that binarizes an image based on a threshold value
+    for a given RGB channel.
+
+    Parameters
+    ----------
+    image : np.ndarray
+        The input image.
+    treshold : int
+        The threshold value.
+    RGB_channel : int
+        The channel to apply the thresholding.
+
+    Returns
+    -------
+    np.ndarray
+        The resulting binary image.
+    """
     # ..... your code here .....
     return binary_image
 
@@ -80,11 +101,36 @@ print("Exercise 1.4")
 
 lower_treshold = ...
 upper_treshold = ...
-def thresholding(image, lower_treshold, upper_treshold, RGB_channel):
+def double_thresholding(
+        image: np.ndarray,
+        lower_treshold: int,
+        upper_treshold: int,
+        RGB_channel: int
+) -> np.ndarray:
+    """A function that binarizes an image based on a lower and upper threshold value
+    for a given RGB channel.
+
+    Parameters
+    ----------
+    image : np.ndarray
+        The input image.
+    lower_treshold : int
+        The lower threshold value.
+    upper_treshold : int
+        The upper threshold value.
+
+    RGB_channel : int
+        The channel to apply the thresholding.
+    
+    Returns
+    -------
+    np.ndarray
+        The resulting binary image.
+    """
     # ..... your code here .....
     return binary_image
 
-binary_image = thresholding(image, lower_treshold, upper_treshold, channel)
+binary_image = double_thresholding(image, lower_treshold, upper_treshold, channel)
 
 fig, ax = plt.subplots(1, 3, figsize=(10, 5))
 ax[0].imshow(image)
