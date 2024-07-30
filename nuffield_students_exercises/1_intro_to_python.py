@@ -20,7 +20,8 @@
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.1")
 
-# ..... your code here .....
+for number in range(100):
+    print(number + 1)
 
 # ~~~~~~~~~~~
 # Exercise 1.2
@@ -29,7 +30,11 @@ print("Exercise 1.1")
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.2")
 
-# ..... your code here .....
+for number in range(1, 101):
+    if number % 3 == 0:
+        print("Fizz")
+    else:
+        print(number)
 
 # ~~~~~~~~~~~
 # Exercise 1.3
@@ -38,7 +43,15 @@ print("Exercise 1.2")
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.3")
 
-# ..... your code here .....
+for number in range(1, 101):
+    if number % 3 == 0 and number % 5 == 0:
+        print("FizzBuzz")
+    elif number % 3 == 0:
+        print("Fizz")
+    elif number % 5 == 0:
+        print("Buzz")
+    else:
+        print(number)
 
 # ~~~~~~~~~~~
 # Exercise 1.4
@@ -48,7 +61,18 @@ print("Exercise 1.3")
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.4")
 
-# ..... your code here .....
+def fizz_buzz(n):
+    for number in range(1, n + 1):
+        if (number % 5 == 0) and (number % 3 == 0):
+            print("FizzBuzz")
+        elif number % 3 == 0:
+            print("Fizz")
+        elif number % 5 == 0:
+            print("Buzz")
+        else:
+            print(number)
+
+fizz_buzz(50)
 
 # ~~~~~~~~~~~
 # Exercise 1.5
@@ -83,17 +107,38 @@ def super_mario(h: int) -> None:
     # ensure valid input; prompt user if h is <1 or >8
     # Hint: you can use an if statement and raise an exception if the condition is not met
     # Exception type: ValueError
-        
-    # ..... your code here .....
+    
+    # Method 1
+    # if h < 1 or h > 8: 
+    #     raise ValueError("Value h was out of range")
+    
+    # Method 2
+    # assert h > 1 and h < 9, "Value h was out of range"
 
     # Part 2
     # print the pyramid
     # Hint: use a for loop to iterate through the rows of the pyramid
 
-    # ..... your code here .....
+    # Piramid design 1
+    # row = ""
+    # for i in range(1, h):
+    #     wall = "#" * i
+    #     white_spaces = " " * (h - i)
+    #     row = white_spaces + wall 
+    #     print(row)
 
-    
-super_mario(5)
+    # Method 1 + Piramid design 2
+    if (h > 8) or (h < 1):
+        raise ValueError("The height is not between 1 and 8! 😡")
+    else:
+        for n_row in range(1, h + 1):
+            n_of_hash = n_row * 2 - 1
+            n_spaces = h - n_row
+            print(" " * n_spaces, end="")
+            print("#" * n_of_hash) 
+
+
+super_mario(9)
 
 
 # ~〄~ ~〄~ ~〄~ ~〄~ ~〄~ ~〄~ ~〄~ ~〄~
