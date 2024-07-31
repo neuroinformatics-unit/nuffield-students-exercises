@@ -21,9 +21,9 @@ import skimage
 
 # ~~~~~~~~~~~
 # Exercise 1.1
-# Load the image 'data/coins.png' with skimage.
+# Load the image 'coins.png' with skimage.
 # Plot the image.
-# Hint: Use skimage.io.imread().
+# Hint: Use skimage.data.coins()
 
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.1")
