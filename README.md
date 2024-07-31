@@ -6,7 +6,8 @@ The exercises are designed to be completed in Python, and are intended to be com
 The exercises would not give you a comprehensive understanding of Python, but they should give you a good starting point.
 The completion of these exercises is required to be able to work on the project as they cover a lot of the basics that you will need to know.
 
-## Python and Computer Science resources
+## Resources
+### Getting started with Python
 There are plenty of good resources online to learn how to code in Python. Here are some of the free resources that we recommend:
 - Software carpentry introduction to Python: [Software carpentry](https://swcarpentry.github.io/python-novice-inflammation/01-intro.html)
 - Comprehensive intro to computer science: [CS50x](https://cs50.harvard.edu/x/2024/)
@@ -14,11 +15,20 @@ There are plenty of good resources online to learn how to code in Python. Here a
 
 You can go through the material before starting the exercises or do them in parallel.
 
-## Specific resources
+### Some concepts to keep in mind
+- [What is an environment in Python](https://realpython.com/effective-python-environment/#virtual-environments) & [conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+- [Pass by reference vs pass by value](https://realpython.com/python-pass-by-reference/) 
+- [Terminal and navigating the file system](https://www.codecademy.com/articles/command-line-commands)
+
+### Python libraries
+- [What are Python libraries](https://www.geeksforgeeks.org/libraries-in-python/)
 - [NumPy quickstart tutorial](https://numpy.org/doc/stable/user/quickstart.html)
 - [Matplotlib tutorials](https://matplotlib.org/stable/tutorials/index.html)
-- [What is an environment in Python](https://realpython.com/effective-python-environment/)
 - [Pytest](https://docs.pytest.org/en/6.2.x/)
+
+  
+### Biology and neuroscience
+- [Calcium imagining](https://en.wikipedia.org/wiki/Calcium_imaging)
   
 ## List of the exercises
 1. Introduction to Python: print statements, loops, functions
