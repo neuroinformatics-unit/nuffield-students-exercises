@@ -48,12 +48,12 @@ print("Exercise 1.2")
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.3")
 
-treshold = 100
+threshold = 100
 image = ... 
 channel = ...
 def thresholding(
         image: np.ndarray,
-        treshold: int,
+        threshold: int,
         RGB_channel: int
 ) -> np.ndarray:
     """A function that binarizes an image based on a threshold value
@@ -76,17 +76,17 @@ def thresholding(
     # ..... your code here .....
     return binary_image
 
-binary_image = thresholding(image, treshold, channel)
+binary_image = thresholding(image, threshold, channel)
 
 fig, ax = plt.subplots(1, 3, figsize=(10, 5))
 ax[0].imshow(image)
 ax[0].set_title('Original image')
 ax[0].axis('off')
 ax[1].imshow(binary_image, cmap='gray')
-ax[1].set_title(f'Binary image, threshold = {treshold}, channel = {channel}')
+ax[1].set_title(f'Binary image, threshold = {threshold}, channel = {channel}')
 ax[1].axis('off')
 ax[2].hist(image[:,:,channel].ravel(), bins=256, color='k')
-ax[2].axvline(treshold, color='r')
+ax[2].axvline(threshold, color='r')
 ax[2].set_title(f'Histogram of channel {channel}')
 
 plt.show()
