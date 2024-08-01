@@ -30,7 +30,10 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.1")
 
 # ..... your code here .....
-
+array1_4 = np.ones([10, 10])
+array1_4[1:9, 1:9] = 0
+plt.imshow(array1_4)
+plt.close()
 # ~~~~~~~~~~~
 # Exercise 1.2
 # Read the image 'data/cat.jpeg' with matplotlib.
@@ -41,6 +44,10 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.2")
 
 # ..... your code here .....
+image = plt.imread("data/cat.jpeg")
+plt.imshow(image)
+plt.show()
+plt.close()
 
 # ~~~~~~~~~~~
 # Exercise 1.3
@@ -51,16 +58,20 @@ print("Exercise 1.3")
 
 fig, ax = plt.subplots(1, 3, figsize=(15, 5))
 # ..... your code here .....
+ax[0].imshow(image[:,:,0], cmap="Reds")
 ax[0].set_title('Red channel')
 ax[0].axis('off')
 # ..... your code here .....
+ax[1].imshow(image[:,:,1], cmap="Greens")
 ax[1].set_title('Green channel')
 ax[1].axis('off')
 # ..... your code here .....
+ax[2].imshow(image[:,:,2], cmap="Blues")
 ax[2].set_title('Blue channel')
 ax[2].axis('off')
 
-plt.show()  
+plt.show()
+plt.close()
 
 # ~~~~~~~~~~~
 # Exercise 1.4
@@ -68,7 +79,15 @@ plt.show()
 # Hint: Use the formula for grayscale: 0.2989 * R + 0.5870 * G + 0.1140 * B.
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.4")
+import matplotlib.image as mpimg
+def rgb2gray(rgb):
+    return np.dot(rgb[...,:3], [0.2989, 0.5870, 0.01140])
+# plt.imshow(image)
+img_gray = rgb2gray(image)
+plt.imshow(img_gray, cmap=plt.get_cmap('gray'))
+plt.savefig('test.png')
 
+plt.show()
 # ..... your code here .....
 
 # ~~~~~~~~~~~
@@ -79,7 +98,8 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.5")
 
 # ..... your code here .....
-
+plt.hist(image)
+plt.show()
 # ~~~~~~~~~~~
 # Exercise 1.6
 # Apply thresholding to the grayscale image from Exercise 1.4 and set all pixels below a certain threshold to 0.

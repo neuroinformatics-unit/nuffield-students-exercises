@@ -21,6 +21,8 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.1")
 
 # ..... your code here .....
+for number in range(1, 101,):
+     print(number)
 
 # ~~~~~~~~~~~
 # Exercise 1.2
@@ -30,6 +32,11 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.2")
 
 # ..... your code here .....
+for number in range (1, 101):
+    if number %3 ==0:
+        print("Fizz")
+    else:
+        print(number)
 
 # ~~~~~~~~~~~
 # Exercise 1.3
@@ -39,7 +46,15 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.3")
 
 # ..... your code here .....
-
+for number in range(1, 101):
+        if number %3 == 0:
+            print("Fizz")
+        if number %5 == 0:
+            print ("Buzz")
+        if (number %5 == 0) and (number %3 == 0):
+            print ("FizzBuzz")
+else:
+            print(number)
 # ~~~~~~~~~~~
 # Exercise 1.4
 # Wrap the code from Exercise 1.3 in a function called fizzbuzz that takes a single argument n,
@@ -49,6 +64,22 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.4")
 
 # ..... your code here .....
+
+def FizzBuzz(n):
+    for number in range (1, n+1):
+
+        if (number %5 == 0) and (number %3 == 0):
+            print ("FizzBuzz")
+        elif number %3 == 0:
+            print("Fizz")
+        elif number %5 == 0:
+            print ("Buzz")
+    
+    else:
+        print(number)
+
+
+
 
 # ~~~~~~~~~~~
 # Exercise 1.5
@@ -85,6 +116,20 @@ def super_mario(h: int) -> None:
     # Exception type: ValueError
         
     # ..... your code here .....
+    print("Welcome to the Mario Pyramid Game!")
+    print("What would you like the height of the pyramid to be?")
+    if (h > 8) | (h < 1):
+        raise ValueError("THE HEIGHT IS NOT BETWEEN 1 AND 8😡")
+    else:
+        for n_row in range (1, h+1):
+            n_of_hash = n_row * 2 - 1
+            n_spaces = h - n_row
+            print(" " * n_spaces, end="")
+            print("#" * n_of_hash)
+        
+
+
+
 
     # Part 2
     # print the pyramid

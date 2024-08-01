@@ -27,6 +27,9 @@ print("Exercise 1.1")
 
 # ..... your code here .....
 
+array1_1 = np.arange(1, 101)
+print(array1_1)
+
 # ~~~~~~~~~~~
 # Exercise 1.2
 # Make a 2D numpy array of shape (10, 10) with all elements set to 0.
@@ -35,7 +38,8 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.2")
 
 # ..... your code here .....
-
+array1_2 = np.zeros([10, 10])
+print(array1_2)
 # ~~~~~~~~~~~
 # Exercise 1.3
 # Change the element in the 5th row and 5th column of the array from Exercise 1.2 to 1.
@@ -44,7 +48,9 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.3")
 
 # ..... your code here .....
-
+array1_3 = np.zeros([10, 10])
+array1_3[4][4] = 1
+print(array1_3)
 # ~~~~~~~~~~~
 # Exercise 1.4
 # Create an array which borders are set to 1 and the inside is set to 0.
@@ -63,9 +69,10 @@ print("Exercise 1.3")
 # 1 1 1 1 1 1 1 1 1 1 
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.4")
-
 # ..... your code here .....
-
+array1_4 = np.ones([10, 10])
+array1_4[1:9, 1:9] = 0
+print(array1_4)
 # ~~~~~~~~~~~
 # Exercise 1.5
 # Add the two arrays from Exercise 1.3 and Exercise 1.4.
@@ -74,7 +81,8 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.5")
 
 # ..... your code here .....
-
+array1_5 = array1_3 + array1_4
+print(array1_5)
 # ~~~~~~~~~~~
 # Exercise 1.6
 # Multiply the array from Exercise 1.5 by 2.
@@ -83,14 +91,20 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.6")
 
 # ..... your code here .....
-
+array1_6 = array1_5 * 2
+print(array1_6)
 # ~~~~~~~~~~~
 # Exercise 1.7
 # Calculate the mean, median, and standard deviation of the array from Exercise 1.6.
 # Hint: Use np.mean(), np.median(), and np.std().
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.7")
-
+array1_6mean = np.mean(array1_6)
+array1_6med = np.median(array1_6)
+array1_6std = np.std(array1_6)
+print("The mean of the array is", array1_6mean,".")
+print("The median of the array is", array1_6med,".")
+print("The standard deviation of the array is", array1_6std,".")
 # ..... your code here .....
 
 # ~~~~~~~~~~~
@@ -104,8 +118,13 @@ print("Exercise 1.8")
 
 a = np.array([0.0, 10.0, 20.0, 30.0])
 b = np.array([1.0, 2.0, 3.0])
+print(b)
 result =  a[:, np.newaxis] + b
+print(result)
 
+d = np.matrix([[1, 2], [3, 4]])
+d_asarray = np.asarray(d)
+print(d_asarray)
 # ..... your code here .....
 
 # ☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎
