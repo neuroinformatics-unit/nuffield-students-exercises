@@ -19,13 +19,15 @@ You can go through the material before starting the exercises or do them in para
 - [What is an environment in Python](https://realpython.com/effective-python-environment/#virtual-environments) & [conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 - [Pass by reference vs pass by value](https://realpython.com/python-pass-by-reference/) 
 - [Terminal and navigating the file system](https://www.codecademy.com/articles/command-line-commands)
+- [Typing in Python](https://realpython.com/python-type-checking/)
+- ["Functions and docstrings"](https://realpython.com/documenting-python-code/)
+- ["RGB color model"](https://en.wikipedia.org/wiki/RGB_color_model)
 
 ### Python libraries
 - [What are Python libraries](https://www.geeksforgeeks.org/libraries-in-python/)
 - [NumPy quickstart tutorial](https://numpy.org/doc/stable/user/quickstart.html)
 - [Matplotlib tutorials](https://matplotlib.org/stable/tutorials/index.html)
 - [Pytest](https://docs.pytest.org/en/6.2.x/)
-
   
 ### Biology and neuroscience
 - [Calcium imagining](https://en.wikipedia.org/wiki/Calcium_imaging)
