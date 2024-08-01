@@ -25,7 +25,8 @@ import numpy as np
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.1")
 
-# ..... your code here .....
+array1_1 = np.arange(1, 101)
+print(array1_1)
 
 # ~~~~~~~~~~~
 # Exercise 1.2
@@ -34,7 +35,8 @@ print("Exercise 1.1")
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.2")
 
-# ..... your code here .....
+b = np.zeros((10, 10))
+print(b)
 
 # ~~~~~~~~~~~
 # Exercise 1.3
@@ -43,7 +45,8 @@ print("Exercise 1.2")
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.3")
 
-# ..... your code here .....
+b[4][4] = 1
+print(b)
 
 # ~~~~~~~~~~~
 # Exercise 1.4
@@ -64,7 +67,19 @@ print("Exercise 1.3")
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.4")
 
-# ..... your code here .....
+# Using np.ones()
+array1_4 = np.ones((10, 10))
+array1_4[1:9, 1:9] = 0
+print(f"Solution 1: \n{array1_4}")
+
+# Using np.zeros()
+c = np.zeros((10, 10))
+c[0:1] = 1
+c[9:10] = 1
+c[:, 0] = 1
+c[:, 9] = 1
+
+print(f"Solution 2: \n{c}")
 
 # ~~~~~~~~~~~
 # Exercise 1.5
@@ -73,7 +88,9 @@ print("Exercise 1.4")
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.5")
 
-# ..... your code here .....
+array1_5 = b + c
+
+print(array1_5)
 
 # ~~~~~~~~~~~
 # Exercise 1.6
@@ -82,7 +99,8 @@ print("Exercise 1.5")
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.6")
 
-# ..... your code here .....
+array1_6 = array1_5 * 2
+print(array1_6)
 
 # ~~~~~~~~~~~
 # Exercise 1.7
@@ -91,7 +109,9 @@ print("Exercise 1.6")
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.7")
 
-# ..... your code here .....
+print(f"The mean of the matrix is: {np.mean(array1_6)}")
+print(f"The median of the matrix is: {np.median(array1_6)}")
+print(f"The standard deviation of the matrix is: {np.std(array1_6):.2f}")
 
 # ~~~~~~~~~~~
 # Exercise 1.8
@@ -106,7 +126,10 @@ a = np.array([0.0, 10.0, 20.0, 30.0])
 b = np.array([1.0, 2.0, 3.0])
 result =  a[:, np.newaxis] + b
 
-# ..... your code here .....
+print(a.shape)
+print(b.shape)
+print(a[:, np.newaxis].shape)
+print(result.shape)
 
 # ☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎☐◼︎
 # References:
