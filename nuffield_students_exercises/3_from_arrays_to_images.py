@@ -79,17 +79,16 @@ plt.close()
 # Hint: Use the formula for grayscale: 0.2989 * R + 0.5870 * G + 0.1140 * B.
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.4")
+# ..... your code here .....
+
 import matplotlib.image as mpimg
 def rgb2gray(rgb):
     return np.dot(rgb[...,:3], [0.2989, 0.5870, 0.01140])
-# plt.imshow(image)
 img_gray = rgb2gray(image)
 plt.imshow(img_gray, cmap=plt.get_cmap('gray'))
 plt.savefig('test.png')
-
 plt.show()
-# ..... your code here .....
-
+print(image.shape)
 # ~~~~~~~~~~~
 # Exercise 1.5
 # Plot an histogram of the grayscale image from Exercise 1.4.
@@ -98,7 +97,11 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.5")
 
 # ..... your code here .....
-plt.hist(image)
+plt.title("Grayscale Histogram")
+plt.xlabel("Grayscale value")
+plt.ylabel("Pixel count")
+plt.hist(image.flatten(), bins=256)
+print(image.flatten().shape)
 plt.show()
 # ~~~~~~~~~~~
 # Exercise 1.6
