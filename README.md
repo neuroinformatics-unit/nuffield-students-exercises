@@ -30,7 +30,7 @@ You can go through the material before starting the exercises or do them in para
 - [Pytest](https://docs.pytest.org/en/6.2.x/)
   
 ### Biology and neuroscience
-- [Calcium imagining](https://en.wikipedia.org/wiki/Calcium_imaging)
+- [Calcium imaging](https://en.wikipedia.org/wiki/Calcium_imaging)
   
 ## List of the exercises
 1. Introduction to Python: print statements, loops, functions
