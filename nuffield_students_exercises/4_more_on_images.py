@@ -17,7 +17,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import skimage
+import skimage as ski
 
 # ~~~~~~~~~~~
 # Exercise 1.1
@@ -29,7 +29,10 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.1")
 
 # ..... your code here .....
-
+coins = ski.data.coins()
+plt.axis('off')
+ski.io.imshow(coins)
+plt.show()
 # ~~~~~~~~~~~
 # Exercise 1.2
 # Plot the histogram of the image from Exercise 1.1 for each channel.
@@ -38,7 +41,12 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.2")
 
 # ..... your code here .....
-
+plt.title("RGB Coins Histogram")
+plt.xlabel("RGB value")
+plt.ylabel("Pixel count")
+plt.hist(coins.flatten(), bins=256)
+print(coins.flatten().shape)
+plt.show()
 # ~~~~~~~~~~~
 # Exercise 1.3
 # Experiment with different threshold values applied to different channels.
@@ -48,9 +56,10 @@ print("Exercise 1.2")
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.3")
 
-threshold = 100
-image = ... 
-channel = ...
+image = plt.imread("data/cat.jpeg")
+threshold = 50
+image = image
+channel = 0
 def thresholding(
         image: np.ndarray,
         threshold: int,
@@ -63,7 +72,7 @@ def thresholding(
     ----------
     image : np.ndarray
         The input image.
-    treshold : int
+    threshold : int
         The threshold value.
     RGB_channel : int
         The channel to apply the thresholding.
@@ -74,11 +83,27 @@ def thresholding(
         The resulting binary image.
     """
     # ..... your code here .....
+    # select channel with index given in input (image[:,:,0])-> will become like a grayscale image
+    .....
+    # apply threshold as in 1.6 (exercise 3) -> this will create a binary image
+    ......
+    binary_image = ...
     return binary_image
 
 binary_image = thresholding(image, threshold, channel)
-
 fig, ax = plt.subplots(1, 3, figsize=(10, 5))
+for channel in range(0, 3):
+    if channel == 0:
+        ax[0].imshow(image[:,:,0], cmap="Reds")
+    elif channel == 1:
+        ax[1].imshow(image[:,:,1], cmap="Greens")
+    elif channel == 2:
+        ax[2].imshow(image[:,:,2], cmap="Blues")
+    else:
+        print("This channel does not exist!😡")
+        
+np.where(image[channel] > threshold, 256, 0)
+
 ax[0].imshow(image)
 ax[0].set_title('Original image')
 ax[0].axis('off')

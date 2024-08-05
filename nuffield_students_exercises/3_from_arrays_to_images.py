@@ -33,6 +33,7 @@ print("Exercise 1.1")
 array1_4 = np.ones([10, 10])
 array1_4[1:9, 1:9] = 0
 plt.imshow(array1_4)
+plt.show()
 plt.close()
 # ~~~~~~~~~~~
 # Exercise 1.2
@@ -49,6 +50,7 @@ plt.imshow(image)
 plt.show()
 plt.close()
 
+plt.show()
 # ~~~~~~~~~~~
 # Exercise 1.3
 # Visualize RGB channels separately.
@@ -85,10 +87,11 @@ import matplotlib.image as mpimg
 def rgb2gray(rgb):
     return np.dot(rgb[...,:3], [0.2989, 0.5870, 0.01140])
 img_gray = rgb2gray(image)
+plt.axis('off')
 plt.imshow(img_gray, cmap=plt.get_cmap('gray'))
 plt.savefig('test.png')
 plt.show()
-print(image.shape)
+print(img_gray.shape)
 # ~~~~~~~~~~~
 # Exercise 1.5
 # Plot an histogram of the grayscale image from Exercise 1.4.
@@ -113,7 +116,9 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.6")
 
 # ..... your code here .....
-
+plt.axis('off')
+plt.imshow(np.where(img_gray > 100, 256, 0), cmap='gray')
+plt.show()
 # ~~~~~~~~~~~
 # Exercise 1.7
 # Flip the grayscale image from Exercise 1.4 horizontally.
@@ -122,7 +127,9 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.7")
 
 # ..... your code here .....
-
+plt.axis('off')
+plt.imshow(np.flip(img_gray, axis=1), cmap='gray')
+plt.show()
 # ~~~~~~~~~~~
 # Exercise 1.8
 # Rotate the grayscale image from Exercise 1.4 by 45 degrees.
@@ -131,7 +138,9 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.8")
 
 # ..... your code here .....
-
+plt.axis('off')
+plt.imshow(np.rot90(img_gray), cmap='gray')
+plt.show()
 # ~~~~~~~~~~~
 # Exercise 1.9
 # Crop the grayscale image from Exercise 1.4 to a square of size 100x100 pixels.
@@ -140,7 +149,10 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.9")
 
 # ..... your code here .....
-
+plt.axis('off')
+arrImg_gray = np.array(img_gray)
+plt.imshow(arrImg_gray[1200:1301, 1146:1247], cmap='gray')
+plt.show()
 # ~~~~~~~~~~~
 # Exercise 1.10
 # Resize the grayscale image from Exercise 1.4 to 200x200 pixels.
@@ -150,8 +162,10 @@ print("\n ~~~~~~~~~~~")
 print("Exercise 1.10")
 
 # ..... your code here .....
-
-
+plt.axis('off')
+plt.imshow(np.resize(img_gray, (200,200)), cmap='gray')
+plt.show()
+# ~~~~~~~~~~~
 
 # ⚄◉․﹒．~*~․﹒．◉⚄⚄◉․﹒．~*~․﹒．◉⚄⚄◉․﹒．~*~․﹒．◉⚄
 # References:
