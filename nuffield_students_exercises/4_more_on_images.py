@@ -82,28 +82,14 @@ def thresholding(
     np.ndarray
         The resulting binary image.
     """
-    # ..... your code here .....
+    selected_channel = image[:,:, RGB_channel]
+    binary_image = np.where(selected_channel > threshold, 256, 0)
     # select channel with index given in input (image[:,:,0])-> will become like a grayscale image
-    .....
     # apply threshold as in 1.6 (exercise 3) -> this will create a binary image
-    ......
-    binary_image = ...
     return binary_image
 
 binary_image = thresholding(image, threshold, channel)
 fig, ax = plt.subplots(1, 3, figsize=(10, 5))
-for channel in range(0, 3):
-    if channel == 0:
-        ax[0].imshow(image[:,:,0], cmap="Reds")
-    elif channel == 1:
-        ax[1].imshow(image[:,:,1], cmap="Greens")
-    elif channel == 2:
-        ax[2].imshow(image[:,:,2], cmap="Blues")
-    else:
-        print("This channel does not exist!😡")
-        
-np.where(image[channel] > threshold, 256, 0)
-
 ax[0].imshow(image)
 ax[0].set_title('Original image')
 ax[0].axis('off')
@@ -124,8 +110,8 @@ plt.show()
 print("\n ~~~~~~~~~~~")
 print("Exercise 1.4")
 
-lower_treshold = ...
-upper_treshold = ...
+lower_threshold = 10
+upper_threshold = 70
 def double_thresholding(
         image: np.ndarray,
         lower_treshold: int,
@@ -152,21 +138,23 @@ def double_thresholding(
     np.ndarray
         The resulting binary image.
     """
-    # ..... your code here .....
+    selected_channel = image[:,:, RGB_channel]
+    binary_image = np.where(selected_channel < lower_threshold, 0, 256)
+    binary_image = np.where(selected_channel > upper_threshold, 256, 0)    
     return binary_image
 
-binary_image = double_thresholding(image, lower_treshold, upper_treshold, channel)
+binary_image = double_thresholding(image, lower_threshold, upper_threshold, channel)
 
 fig, ax = plt.subplots(1, 3, figsize=(10, 5))
 ax[0].imshow(image)
 ax[0].set_title('Original image')
 ax[0].axis('off')
 ax[1].imshow(binary_image, cmap='gray')
-ax[1].set_title(f'Binary image, lower threshold = {lower_treshold}, upper threshold = {upper_treshold}, channel = {channel}')
+ax[1].set_title(f'Binary image, lower threshold = {lower_threshold}, upper threshold = {upper_threshold}, channel = {channel}')
 ax[1].axis('off')
 ax[2].hist(image[:,:,channel].ravel(), bins=256, color='k') 
-ax[2].axvline(lower_treshold, color='r')
-ax[2].axvline(upper_treshold, color='r')
+ax[2].axvline(lower_threshold, color='r')
+ax[2].axvline(upper_threshold, color='r')
 ax[2].set_title(f'Histogram of channel {channel}')
 
 plt.show()
