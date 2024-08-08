@@ -6,6 +6,12 @@ from tqdm import tqdm
 
 #first, I will import the video (the derotated video clip) (using tifffile)
 video = tif.imread('/Users/training/Downloads/derotated/derotated.tif')
+#then, I will express all non-variable integer values using the variable 'video'
+first_number = (video[0, :, :])
+last_number = (video[-1, :, :])
+t_min_value = video[:, 0, 0]
+t_max_value = video[:, -1, -1]
+print(np.shape(video))
 #afterwards, I will define THREE functions, A, B and C:
 #FUNCTION A: at each frame, i.e. identifying a lower and higher threshold based on the histogram of a given image 
 #(this I think increases the noise but makes the image sharper)
@@ -29,10 +35,10 @@ def single_thresholding_for_each_image( #defining the function
         The new output video.
     """
     arr = []
-    for number in tqdm(range(0, 8258)): #creating a 'for loop' to iterate the thresholds to each frame
+    for number in tqdm(range(first_number, last_number)): #creating a 'for loop' to iterate the thresholds to each frame
         t_min, t_max = find_thresholds(video[number, :, :], contrast_level) #assigning the min. and max. threshold values to two variables
-        first_thresholded_image = np.where(video[number, :, :] < t_min, 0, video[number, :, :]) #adding the lower threshold to the frame
-        second_thresholded_image= np.where(first_thresholded_image > t_max, 256, first_thresholded_image) #adding the upper threshold to the frame
+        first_thresholded_image = np.where(video[number, :, :] < t_min, t_min_value, video[number, :, :]) #adding the lower threshold to the frame
+        second_thresholded_image= np.where(first_thresholded_image > t_max, t_max_value, first_thresholded_image) #adding the upper threshold to the frame
         arr.append(second_thresholded_image) #add each thresholded frame to the list, one after the other
     return np.asarray(arr) #assigning an output which is the new created video
 
@@ -57,8 +63,8 @@ def double_thresholding_for_whole_video(
         The new output video.
     """
     t_min, t_max = find_thresholds(video, contrast_level)
-    first_thresholded_video = np.where(video < t_min, 0, video)
-    second_thresholded_video = np.where(first_thresholded_video > t_max, 256, first_thresholded_video)
+    first_thresholded_video = np.where(video < t_min, t_min_value, video)
+    second_thresholded_video = np.where(first_thresholded_video > t_max_value, 256, first_thresholded_video)
     return second_thresholded_video
 
 #FUNCTION C:
