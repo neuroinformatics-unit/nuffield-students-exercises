@@ -13,12 +13,13 @@ print(np.shape(video))
 #based on the histogram of a given image (this I think increases the noise but makes the image sharper)
 def single_thresholding_for_each_image( #defining the function
         video, contrast_level): #assigning two inputs to the function
+    arr = []
     for number in tqdm(range(0, 8258)): #creating a for loop to iterate the thresholds to each frame
         t_min, t_max = find_thresholds(video[number, :, :], contrast_level) #assigning the min and max threshold values to a variable
-        first_thresholded_video = np.where(video[number, :, :] < t_min, 0, video[number, :, :]) #adding the lower threshold to the video
-        second_thresholded_video= np.where(first_thresholded_video > t_max, 256, first_thresholded_video) #adding the upper threshold to the video
-    return second_thresholded_video #assigning an output which is the new created video
-    
+        first_thresholded_image = np.where(video[number, :, :] < t_min, 0, video[number, :, :]) #adding the lower threshold to the frame
+        second_thresholded_image= np.where(first_thresholded_image > t_max, 256, first_thresholded_image) #adding the upper threshold to the frame
+        arr.append(second_thresholded_image)
+    return np.asarray(arr) #assigning an output which is the new created video
 """This function will apply two unique thresholds to each frame of a video
 and return a new thresholded video ()
 ...............
