@@ -42,6 +42,7 @@ You can find relevant publications in the references in the poster.
 1. Introduction to Python: print statements, loops, functions
 2. Introduction to NumPy: arrays, indexing, slicing, broadcasting
 3. From arrays to images: using NumPy to manipulate images and matplotlib to display them
+4. More on images: writing functions to for thresholding, exploring scikit-image
 
 You can find the exercises in the folder `nuffield_students_exercises` and they contain a series of instructions
 and questions that you need to answer.

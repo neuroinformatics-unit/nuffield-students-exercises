@@ -5,11 +5,8 @@
 # ⁌------------------------------------⁍
 # What you will learn:
 # ✓ Apply thresholding to an image 2.0:
-#   - experiment with different threshold values 
-#     and see the relation between the threshold value and
-#     histogram of the image
-#   - set a lower and upper threshold value
-#   - make a binary image
+#   - Apply thresholding to different channels
+#   - Apply clipping to different channels
 # Stretch goals:
 # ✓ Explore scikit-image library
 # ⁌------------------------------------⁍
@@ -21,36 +18,16 @@ import skimage
 
 # ~~~~~~~~~~~
 # Exercise 1.1
-# Load the image 'coins.png' with skimage.
-# Plot the image.
-# Hint: Use skimage.data.coins()
-
-print("\n ~~~~~~~~~~~")
-print("Exercise 1.1")
-
-# ..... your code here .....
-
-# ~~~~~~~~~~~
-# Exercise 1.2
-# Plot the histogram of the image from Exercise 1.1 for each channel.
-# Hint: Use plt.hist().
-print("\n ~~~~~~~~~~~")
-print("Exercise 1.2")
-
-# ..... your code here .....
-
-# ~~~~~~~~~~~
-# Exercise 1.3
 # Experiment with different threshold values applied to different channels.
 # Hint: Use np.where().
 # The output should be a binary image (black and white).
 
 print("\n ~~~~~~~~~~~")
-print("Exercise 1.3")
+print("Exercise 1.1")
 
 threshold = 100
-image = ... 
-channel = ...
+image = ... # load the image 'data/cat.jpeg'
+channel = ... # choose a channel (0, 1, 2)
 def thresholding(
         image: np.ndarray,
         threshold: int,
@@ -92,23 +69,25 @@ ax[2].set_title(f'Histogram of channel {channel}')
 plt.show()
 
 # ~~~~~~~~~~~
-# Exercise 1.4
+# Exercise 1.2
 # Set a lower and upper threshold value.
 # Hint: Use np.logical_and().
 # The output should be a binary image (black and white).
 print("\n ~~~~~~~~~~~")
-print("Exercise 1.4")
+print("Exercise 1.2")
 
-lower_treshold = ...
-upper_treshold = ...
-def double_thresholding(
+lower_treshold = ... # set a lower threshold value
+upper_treshold = ... # set an upper threshold value
+def clipping_on_RGB_channel(
         image: np.ndarray,
         lower_treshold: int,
         upper_treshold: int,
         RGB_channel: int
 ) -> np.ndarray:
-    """A function that binarizes an image based on a lower and upper threshold value
+    """Apply clipping to an image based on a lower and upper threshold value
     for a given RGB channel.
+    Clipping is a process of limiting the values of an image to a certain range.
+    It is useful for removing noise from the image.
 
     Parameters
     ----------
@@ -130,7 +109,7 @@ def double_thresholding(
     # ..... your code here .....
     return binary_image
 
-binary_image = double_thresholding(image, lower_treshold, upper_treshold, channel)
+binary_image = clipping_on_RGB_channel(image, lower_treshold, upper_treshold, channel)
 
 fig, ax = plt.subplots(1, 3, figsize=(10, 5))
 ax[0].imshow(image)
