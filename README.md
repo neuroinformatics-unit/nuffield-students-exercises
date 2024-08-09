@@ -21,7 +21,8 @@ You can go through the material before starting the exercises or do them in para
 - [Terminal and navigating the file system](https://www.codecademy.com/articles/command-line-commands)
 - [Typing in Python](https://realpython.com/python-type-checking/)
 - ["Functions and docstrings"](https://realpython.com/documenting-python-code/)
-- ["RGB color model"](https://en.wikipedia.org/wiki/RGB_color_model)
+- ["RGB colour model"](https://en.wikipedia.org/wiki/RGB_color_model)
+- [Dot product](https://en.wikipedia.org/wiki/Dot_product)
 
 ### Python libraries
 - [What are Python libraries](https://www.geeksforgeeks.org/libraries-in-python/)
@@ -29,9 +30,14 @@ You can go through the material before starting the exercises or do them in para
 - [Matplotlib tutorials](https://matplotlib.org/stable/tutorials/index.html)
 - [Pytest](https://docs.pytest.org/en/6.2.x/)
   
-### Biology and neuroscience
+### Context (biology)
 - [Calcium imaging](https://en.wikipedia.org/wiki/Calcium_imaging)
+You can find relevant publications in the references in the poster.
   
+### Books
+- [Feature Extraction and Image Processing](https://theswissbay.ch/pdf/Gentoomen%20Library/Artificial%20Intelligence/Computer%20Vision/Feature%20Extraction%20in%20Computer%20Vision%20and%20Image%20Processing%20-%20Mark%20S.%20Nixon.pdf)
+
+
 ## List of the exercises
 1. Introduction to Python: print statements, loops, functions
 2. Introduction to NumPy: arrays, indexing, slicing, broadcasting
